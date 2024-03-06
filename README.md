@@ -19,9 +19,13 @@ The overall architecture is shown as follows:
 
 ### Input Embeddings
 - Separate structure tokens from content tokens to get text embeddings: $$t_i = TokEmb(w_i) + TagEmb({tag}_i) + PosEmb1D(i) + SegEmb({seg}_i)$$
-- Align visual features with HTML inputs to get image embeddings: $${\rm v}^{img}_{i} = {\rm RoSPool}({\rm VisualEncoder(I)})_{n_i}$$ 
-$${\rm v}^{box}_{i} = {\rm Concat}({\rm PosEmb2D_x}(x_0, x_1, w), {\rm PosEmb2D_y}(y_0, y_1, h))$$
-$${\rm v}_i = {\rm v}^{img}_{i} + {\rm v}^{box}_{i},$$
+- Align visual features with HTML inputs to get image embeddings: $${v}^{img}_{i} = {RoSPool}({VisualEncoder(I)})_{n_i}$$ 
+
+
+$${v}^{box}_{i} = {Concat}({PosEmb2D_x}(x_0, x_1, w), {PosEmb2D_y}(y_0, y_1, h))$$
+
+
+$${v}_i = {v}^{img}_{i} + {v}^{box}_{i},$$
 
 
 
